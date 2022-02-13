@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1616814389665.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "75|50|93|0|\n",
+    "hash" : "912727005",
+    "id" : "AE5DDE4",
+    "lastKnownWriteTime" : 1616901582,
+    "last_content_update" : 1616901582320,
+    "path" : "~/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+    "project_path" : "src/MassBLOSUM.cpp",
+    "properties" : {
+        "cursorPosition" : "56,49",
+        "scrollLine" : "49"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

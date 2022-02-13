@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1616709011728.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3814480485",
+    "id" : "EB7463B1",
+    "lastKnownWriteTime" : 1616725007,
+    "last_content_update" : 1616725007,
+    "path" : "~/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/RcppExports.cpp",
+    "project_path" : "src/RcppExports.cpp",
+    "properties" : {
+        "cursorPosition" : "4,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : true,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

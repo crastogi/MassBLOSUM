@@ -1,0 +1,62 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "/Users/chaitanya/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+                "kind" : 2,
+                "line" : 7,
+                "name" : "MassBLOSUM",
+                "parent_name" : "",
+                "usr" : "c:@S@MassBLOSUM"
+            },
+            {
+                "column" : 17,
+                "file" : "/Users/chaitanya/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+                "kind" : 7,
+                "line" : 39,
+                "name" : "matchChar(char)",
+                "parent_name" : "MassBLOSUM",
+                "usr" : "c:@S@MassBLOSUM@F@matchChar#C#"
+            },
+            {
+                "column" : 27,
+                "file" : "/Users/chaitanya/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+                "kind" : 7,
+                "line" : 48,
+                "name" : "computeDistance(std::vector<std::string>)",
+                "parent_name" : "MassBLOSUM",
+                "usr" : "c:@S@MassBLOSUM@F@computeDistance#$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C#$@N@std@N@__1@S@allocator>#S1_#"
+            },
+            {
+                "column" : 18,
+                "file" : "/Users/chaitanya/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+                "kind" : 7,
+                "line" : 76,
+                "name" : "setBaseSeq(std::string)",
+                "parent_name" : "MassBLOSUM",
+                "usr" : "c:@S@MassBLOSUM@F@setBaseSeq#$@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C#"
+            },
+            {
+                "column" : 27,
+                "file" : "/Users/chaitanya/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+                "kind" : 7,
+                "line" : 97,
+                "name" : "computeScores(int)",
+                "parent_name" : "MassBLOSUM",
+                "usr" : "c:@S@MassBLOSUM@F@computeScores#I#"
+            },
+            {
+                "column" : 18,
+                "file" : "/Users/chaitanya/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+                "kind" : 7,
+                "line" : 118,
+                "name" : "test(std::string)",
+                "parent_name" : "MassBLOSUM",
+                "usr" : "c:@S@MassBLOSUM@F@test#$@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C#"
+            }
+        ],
+        "file" : "/Users/chaitanya/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM/src/MassBLOSUM.cpp",
+        "file_last_write" : 1616901582.000000
+    }
+]

@@ -1,0 +1,121 @@
+#include <Rcpp.h>
+using namespace Rcpp;
+using namespace std;
+
+// NOTE: Numeric types are all INT to save memory
+
+class MassBLOSUM{
+public:
+  // Constructor requires BLOSUM matrix and a gap cost value
+  MassBLOSUM(IntegerMatrix, int);
+  void setBaseSeq(std::string);
+  IntegerMatrix computeScores(std::vector<std::string>);
+  void computeDistance(std::vector<std::string>);
+  void test (std::string);
+private:
+  IntegerMatrix scoringMatrix;
+  IntegerMatrix evalMatrix;
+  std::string alpha;
+  int gapCost;
+  int alphaSize;
+  int strSize;
+  int matchChar (char);
+};
+
+// Sets value of scoring matrix and gap cost, and sets the alpha order as well
+MassBLOSUM::MassBLOSUM(IntegerMatrix scoringMatrix_, int gapCost_) {
+  CharacterVector alphabet = colnames(scoringMatrix_);
+  scoringMatrix = scoringMatrix_;
+  alphaSize = alphabet.size();
+  for (int i=0; i<alphaSize; i++) {
+    alpha += alphabet[i];
+  }
+  // Add gap value
+  alpha += '-';
+  gapCost = gapCost_;
+}
+
+// Private helper function to return index
+int MassBLOSUM::matchChar(char test) {
+  for (int i=0; i<alphaSize; i++) {
+    if (alpha[i]==test) {
+      return(i);
+    }
+  }
+  return(-1);
+}
+
+void MassBLOSUM::computeDistance(std::vector<std::string> inStrings) {
+  // Need large square matrix to store output
+  IntegerMatrix output = IntegerMatrix(inStrings.size(), inStrings.size());
+  
+  // Loop over all strings
+  
+}
+
+// Sets the "base sequence" for all alignment. Uses this to create a separate evaluation matrix
+void MassBLOSUM::setBaseSeq(std::string baseSeq) {
+  int colIdx = 0;
+  int nRow = scoringMatrix.nrow();
+  strSize = baseSeq.size();
+  // Note: You need to store gap cost
+  evalMatrix = IntegerMatrix(nRow + 1, strSize);
+  
+  // Fill eval matrix with the appropriate column
+  for (int j=0; j<strSize; j++) {
+    colIdx = matchChar(baseSeq[j]);
+    // Fill up evalMatrix with appropriate column elements
+    for (int i=0; i<nRow; i++) {
+      evalMatrix(i,j) = scoringMatrix(i,colIdx);
+    }
+    // Fill out gap cost position
+    evalMatrix(nRow,j) = gapCost;
+  }
+  //Rf_PrintValue(evalMatrix);
+}
+
+// Returns scores for all sequences. Safe & slower operation, as it checks for string length
+IntegerMatrix MassBLOSUM::computeScores(std::vector<std::string> inStrings) {
+  IntegerMatrix output = IntegerMatrix(inStrings.size(), strSize);
+  
+  // Now loop over all strings
+  for (int i=0; i<inStrings.size(); i++) {
+    // Check length to ensure that input string is of the right size
+    if (inStrings[i].size()!=strSize) {
+      // Incorrect string size; fill with NAs
+      for (int j=0; j<strSize; j++) {
+        output(i,j) = NA_INTEGER;
+      }
+    } else {
+      // Return scores
+      for (int j=0; j<strSize; j++) {
+        output(i,j) = evalMatrix(matchChar(inStrings[i][j]), j);
+      }
+    }
+  }
+  return(output);
+}
+
+void MassBLOSUM::test(std::string inString) {
+  int nCol = inString.size();
+  Rcout << nCol << "\n";
+  for (int j=0; j<nCol; j++) {
+    Rcout << "\n" << inString[j] << "\t" << matchChar(inString[j]) << "\n";
+    // for (int k=0; k<alpha.size(); k++) {
+    //   if (alpha[k]==inString[j]) {
+    //     Rcout << k << "\t";
+    //   }
+    // }
+    // Rcout << (inString[j]==charVec[j]) << "\n";
+  }
+}
+
+RCPP_MODULE(massblosummodule){
+  Rcpp::class_<MassBLOSUM>( "MassBLOSUM" )
+  .constructor<IntegerMatrix, int>("Default constructor, takes in BLOSUM matrix and a gap cost")
+  .method( "setBaseSeq", &MassBLOSUM::setBaseSeq, "Sets the base sequence from which BLOSUM values are computed")
+  .method( "computeScores", &MassBLOSUM::computeScores, "Compute BLOSUM scores on input strings")
+  .method( "computeDistance", &MassBLOSUM::computeDistance, "Compute BLOSUM distance on input strings")
+  .method( "test", &MassBLOSUM::test, "Test Function")
+  ;
+}

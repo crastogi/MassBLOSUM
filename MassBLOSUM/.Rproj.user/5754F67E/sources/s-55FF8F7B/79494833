@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1616901596694.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "79494833",
+    "lastKnownWriteTime" : 1616781812,
+    "last_content_update" : 1616781812,
+    "path" : "~/Documents/Research/Commercialization/Research/UMAPAlignment/MassBLOSUM_Test.R",
+    "project_path" : "../MassBLOSUM_Test.R",
+    "properties" : {
+        "cursorPosition" : "20,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
