@@ -1,2 +1,2 @@
-# MassBLOSUM
-RCpp BLOSUM library 
+# AminoUMAP
+Currently contains an RCpp BLOSUM library 
